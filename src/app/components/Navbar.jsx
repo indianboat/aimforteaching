@@ -4,7 +4,7 @@ import Link from "next/link";
 import ThemeComponent from "./ThemeComponent";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { CgClose } from "react-icons/cg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -21,11 +21,13 @@ const Navbar = () => {
     }
   };
 
-  if (isOpen) {
-    document.body.style.setProperty("overflow", "hidden");
-  } else {
-    document.body.style.removeProperty("overflow");
-  }
+  useEffect(()=>{
+    if (isOpen) {
+      document.body.style.setProperty("overflow", "hidden");
+    } else {
+      document.body.style.removeProperty("overflow");
+    }
+  },[isOpen])
 
   return (
     <>
