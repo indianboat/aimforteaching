@@ -7,7 +7,7 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => { 
   return (
     <>
-      <footer class="footer border border-red-500 py-2">
+      <footer className="footer border border-red-500 py-2">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border border-blue-600">
           <div className="flex md:flex-row sm:flex-row flex-col justify-between py-1 md:gap-y-0 sm:gap-y-4 gap-y-4">
             <div className="flex flex-col border justify-center md:text-start sm:text-start text-center  md:items-start sm:items-start items-center">
@@ -19,12 +19,12 @@ const Footer = () => {
             <div className="flex border items-center  md:justify-start sm:justify-start justify-center">
               <form method="post">
                 <input
-                  className="border border-rose-900"
+                  className="border border-rose-900 px-2 py-1"
                   type="text"
                   placeholder="Enter your email address"
                 />
                 <button
-                  className="border"
+                  className="border px-3 py-1"
                   onClick={(e) => e.preventDefault()}
                   type="submit"
                 >
@@ -44,7 +44,7 @@ const Footer = () => {
                 </p>
               </div>
               <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-2 lg:gap-x-4 md:gap-4 gap-4">
-                <div className="flex border flex-col md:w-40 sm:w-full w-full">
+                <div className="flex border flex-col md:w-40 sm:w-full w-full md:text-start sm:text-start text-center">
                   <h1 className="text-lg font-semibold">Product</h1>
                   <ul className="flex flex-col gap-y-2 mt-3">
                     <li>
@@ -74,7 +74,7 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="flex border flex-col md:w-40 sm:w-full w-full">
+                <div className="flex border flex-col md:w-40 sm:w-full w-full md:text-start sm:text-start text-center">
                   <h1 className="text-lg font-semibold">Company</h1>
                   <ul className="flex flex-col gap-y-2 mt-3">
                     <li>
@@ -104,7 +104,7 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="flex border flex-col md:w-40 sm:w-full w-full">
+                <div className="flex border flex-col md:w-40 sm:w-full w-full md:text-start sm:text-start text-center">
                   <h1 className="text-lg font-semibold">Support</h1>
                   <ul className="flex flex-col gap-y-2 mt-3">
                     <li>
@@ -134,7 +134,7 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="flex border flex-col md:w-40 sm:w-full w-full">
+                <div className="flex border flex-col md:w-40 sm:w-full w-full md:text-start sm:text-start text-center">
                   <h1 className="text-lg font-semibold">Soical</h1>
                   <ul className="flex flex-col gap-y-2 mt-3">
                     <li>

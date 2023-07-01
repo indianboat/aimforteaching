@@ -78,13 +78,12 @@ const Navbar = () => {
 
       <div
         className={`${
-          isOpen ? "z-40 absolute inset-0 transition-opacity" : ""
+          isOpen ? "z-40 absolute h-full w-full inset-0 transition-opacity" : ""
         }`}
       >
         <div
-          tabIndex="0"
           onClick={drawerHandler}
-          className={`${isOpen ? "absolute inset-0 bg-black opacity-50" : ""}`}
+          className={`${isOpen ? "inset-0 fixed w-full h-full bg-black opacity-50" : ""}`}
         ></div>
       </div>
 
