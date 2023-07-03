@@ -7,24 +7,24 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => { 
   return (
     <>
-      <footer className="footer border border-red-500 py-2">
+      <footer className="footer border border-red-500 py-2 bg-[#fbfbfb] dark:bg-inherit">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border border-blue-600">
           <div className="flex md:flex-row sm:flex-row flex-col justify-between py-1 md:gap-y-0 sm:gap-y-4 gap-y-4">
             <div className="flex flex-col border justify-center md:text-start sm:text-start text-center  md:items-start sm:items-start items-center">
               <h1 className="text-lg font-medium">Join our newsletter</h1>
-              <h1 className="text-sm font-medium text-gray-700">
+              <h1 className="text-sm font-medium text-gray-700 dark:text-gray-100">
                 We will send you a nice news once a week, no spam.
               </h1>
             </div>
-            <div className="flex border items-center  md:justify-start sm:justify-start justify-center">
-              <form method="post">
+            <div className="flex border items-center md:justify-start sm:justify-start justify-center">
+              <form method="post" className="flex gap-x-2">
                 <input
-                  className="border border-rose-900 px-2 py-1"
+                  className="border ring-2 rounded-xl border-rose-900 px-4 py-2"
                   type="text"
                   placeholder="Enter your email address"
                 />
                 <button
-                  className="border px-3 py-1"
+                  className="border px-4 py-2 ring-2 rounded-xl"
                   onClick={(e) => e.preventDefault()}
                   type="submit"
                 >
@@ -36,8 +36,8 @@ const Footer = () => {
           <div className="my-6 border py-1">
             <div className="flex md:flex-row sm:flex-row flex-col gap-x-3 justify-between md:gap-y-0 sm:gap-y-4 gap-y-4">
               <div className="flex border flex-col justify-start md:text-start sm:text-start text-center md:items-start sm:items-start items-center md:w-80 sm:w-96 w-full">
-                <h1 className="text-2xl font-semibold">AimForTeaching.in</h1>
-                <p className="text-sm font-medium text-gray-700 mt-2">
+                <h1 className="text-xl font-semibold">AimForTeaching.in</h1>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-100 mt-2">
                   Master Your Teaching Exams, Study Tips, and Exam Updates in
                   One Place. Stay Informed with the Latest Teaching Exams
                   Updates and Strategies
@@ -170,7 +170,7 @@ const Footer = () => {
 
           <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col justify-between md:gap-y-0 sm:gap-y-4 gap-y-4">
             <div className="flex border md:justify-start sm:justify-start justify-center">
-              <p className="text-sm font-medium text-gray-700">
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-100 md:text-start sm:text-start text-center">
                 &copy; 2023 aimforteaching.in | All rights reserved
               </p>
             </div>

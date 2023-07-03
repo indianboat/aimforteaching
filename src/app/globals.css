@@ -16,3 +16,7 @@ body{
 .footer{
   margin-top: auto;
 }
+
+.border{
+  border: 0;
+}

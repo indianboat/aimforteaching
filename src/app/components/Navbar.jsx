@@ -21,17 +21,33 @@ const Navbar = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     if (isOpen) {
       document.body.style.setProperty("overflow", "hidden");
     } else {
       document.body.style.removeProperty("overflow");
     }
-  },[isOpen])
+  }, [isOpen]);
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerDirection: -1
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: "-25%", opacity: 0 },
+    show: { y: "0", opacity: 1 },
+  };
 
   return (
     <>
-      <nav className="fixed w-full border py-1 z-30 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70">
+      <nav className="fixed w-full border py-3 z-30 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
           <div className="flex md:w-auto sm:w-full w-full items-center md:justify-center sm:justify-between justify-between border gap-x-4">
             <button
@@ -83,7 +99,9 @@ const Navbar = () => {
       >
         <div
           onClick={drawerHandler}
-          className={`${isOpen ? "inset-0 fixed w-full h-full bg-black opacity-50" : ""}`}
+          className={`${
+            isOpen ? "inset-0 fixed w-full h-full bg-black opacity-50" : ""
+          }`}
         ></div>
       </div>
 
@@ -91,11 +109,24 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             className="z-50 fixed left-0 w-64 h-full bg-white overflow-y-auto dark:bg-gray-800 shadow-md p-4 transform"
-            initial={{ x: -280 }}
-            animate={{ x: isOpen ? 0 : -300 }}
-            transition={{ type: "spring", stiffness: 800, damping: 30 }}
-            onClick={(e) => e.stopPropagation()}
-            exit={{ x: isOpen ? -300 : 0, }}
+            // initial={{ x: -280 }}
+            // animate={{ x: isOpen ? 0 : -300 }}
+            // transition={{ type: "spring", stiffness: 800, damping: 30 }}
+            // onClick={(e) => e.stopPropagation()}
+            // exit={{ x: isOpen ? -300 : 0 }}
+
+            variants={{
+              open: {
+                x: "0%",
+              },
+              closed: {
+                x: "-300%",
+              },
+            }}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            transition={{ type: "spring", stiffness: 800, damping: 35 }}
           >
             <button
               type="button"
@@ -108,46 +139,89 @@ const Navbar = () => {
               <span className="sr-only">Close menu</span>
             </button>
 
-            <div className="flex flex-col mb-4 mt-8 border gap-y-3">
-              <Link
-                href={"/"}
-                className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg"
-                onClick={handleLinkClick}
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="flex flex-col mb-4 mt-8 border gap-y-3"
+            >
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.2 }}
+                className="flex w-full"
               >
-                Home
-              </Link>
-              <Link
-                href={"/"}
-                className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg"
-                onClick={handleLinkClick}
-              >
-                Explore Exams
-              </Link>
-              <Link
-                href={"/"}
-                className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg"
-                onClick={handleLinkClick}
-              >
-                Upcoming Exams
-              </Link>
-            </div>
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Home
+                </Link>
+              </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <Link
-                href="/login"
-                className="flex justify-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                onClick={handleLinkClick}
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.4 }}
+                className="flex w-full"
               >
-                Sign in
-              </Link>
-              <Link
-                href="/signup"
-                className="flex justify-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                onClick={handleLinkClick}
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Explore Exams
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.5 }}
+                className="flex w-full"
               >
-                Sign up
-              </Link>
-            </div>
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Upcoming Exams
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="flex gap-4 justify-evenly border"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.6 }}
+                className="flex"
+              >
+                <Link
+                  href="/login"
+                  className="flex justify-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  onClick={handleLinkClick}
+                >
+                  Sign in
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.7 }}
+                className="flex"
+              >
+                <Link
+                  href="/signup"
+                  className="flex justify-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 border border"
+                  onClick={handleLinkClick}
+                >
+                  Sign up
+                </Link>
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
