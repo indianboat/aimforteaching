@@ -55,12 +55,13 @@ const Navbar = () => {
             <button
               onClick={drawerHandler}
               className="lg:hidden md:hidden sm:flex flex p-2 rounded-full hover:bg-gray-100 hover:dark:bg-[#4B5563] transition-colors"
+              aria-labelledby="themeicon"
             >
               <HiMiniBars3 size={22} />
             </button>
             <Link
               href="/"
-              className="font-semibold lg:text-2xl md:text-xl sm:text-lg text-md border"
+              className="font-semibold lg:text-2xl md:text-xl sm:text-xl text-md border"
             >
               AimForTeaching
             </Link>

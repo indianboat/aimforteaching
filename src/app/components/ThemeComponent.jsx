@@ -15,7 +15,7 @@ const ThemeComponent = () => {
   return (
     <>
       <button
-        className="hover:bg-gray-100  p-2 rounded-full transition-colors hover:dark:bg-[#4B5563]"
+        className="hover:bg-gray-100 p-2 rounded-full transition-colors hover:dark:bg-[#4B5563]"
         onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       >
         {resolvedTheme === "dark" ? (
