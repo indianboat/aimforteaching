@@ -19,9 +19,9 @@ const ThemeComponent = () => {
         onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       >
         {resolvedTheme === "dark" ? (
-          <TbSunLow size={16} className="text-gray-300" />
+          <TbSunLow size={20} className="text-gray-300" />
         ) : (
-          <TbMoonFilled size={16} className="text-gray-700" />
+          <TbMoonFilled size={20} className="text-gray-700" />
         )}
       </button>
     </>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { SiFacebook, SiTelegram, SiLinkedin } from "react-icons/si";
 import { RiInstagramFill } from "react-icons/ri";
 
-const Footer = () => { 
+const Footer = () => {
   return (
     <>
       <footer className="footer border border-red-500 py-2 bg-[#fbfbfb] dark:bg-inherit">
@@ -17,19 +17,22 @@ const Footer = () => {
               </h1>
             </div>
             <div className="flex border items-center md:justify-start sm:justify-start justify-center">
-              <form method="post" className="flex gap-x-2">
-                <input
-                  className="border ring-2 rounded-xl border-rose-900 px-4 py-2"
-                  type="text"
-                  placeholder="Enter your email address"
-                />
-                <button
-                  className="border px-4 py-2 ring-2 rounded-xl"
-                  onClick={(e) => e.preventDefault()}
-                  type="submit"
-                >
-                  Subscribe
-                </button>
+              <form method="post" className="border md:w-[420px] w-full">
+                <div className="flex gap-x-2 md:flex-row sm:flex-col flex-col gap-y-4 w-full">
+                  <input
+                    className="border ring-2 rounded-xl border-rose-900 px-4 py-2 w-full"
+                    type="text"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                  <button
+                    className="border px-4 py-2 ring-2 rounded-xl"
+                    // onClick={(e) => e.preventDefault()}
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -78,7 +81,7 @@ const Footer = () => {
                   <h1 className="text-lg font-semibold">Company</h1>
                   <ul className="flex flex-col gap-y-2 mt-3">
                     <li>
-                      <Link className="hover:text-blue-800" href="/">
+                      <Link className="hover:text-blue-800" href="/aboutus">
                         About
                       </Link>
                     </li>
@@ -175,10 +178,18 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-x-4 justify-center items-center">
-            <Link className="flex border" href="/"><SiFacebook /></Link>
-            <Link className="flex border" href="/"><SiTelegram /></Link>
-            <Link className="flex border" href="/"><RiInstagramFill /></Link>
-            <Link className="flex border" href="/"><SiLinkedin /></Link>
+              <Link className="flex border" href="/">
+                <SiFacebook size={22} />
+              </Link>
+              <Link className="flex border" href="/">
+                <SiTelegram size={22} />
+              </Link>
+              <Link className="flex border" href="/">
+                <RiInstagramFill size={22} />
+              </Link>
+              <Link className="flex border" href="/">
+                <SiLinkedin size={22} />
+              </Link>
             </div>
           </div>
         </div>

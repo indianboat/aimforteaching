@@ -5,6 +5,7 @@ import ThemeComponent from "./ThemeComponent";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { CgClose } from "react-icons/cg";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -45,6 +46,7 @@ const Navbar = () => {
     show: { y: "0", opacity: 1 },
   };
 
+ 
   return (
     <>
       <nav className="fixed w-full border py-3 z-30 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
@@ -54,7 +56,7 @@ const Navbar = () => {
               onClick={drawerHandler}
               className="lg:hidden md:hidden sm:flex flex p-2 rounded-full hover:bg-gray-100 hover:dark:bg-[#4B5563] transition-colors"
             >
-              <HiMiniBars3 size={18} />
+              <HiMiniBars3 size={22} />
             </button>
             <Link
               href="/"
@@ -66,13 +68,13 @@ const Navbar = () => {
               <ThemeComponent />
             </div>
             <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4">
-              <Link href="/" className="text-md border">
+              <Link href="/" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/" ? "text-blue-800 dark:text-orange-500" : "text-inherit"}`}>
                 Home
               </Link>
-              <Link href="/" className="text-md border">
+              <Link href="/exams" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/exams" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
                 Explore Exams
               </Link>
-              <Link href="/" className="text-md border">
+              <Link href="/exams/upcomingexams" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/exams/upcomingexams" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
                 Upcoming Exams
               </Link>
             </div>
@@ -80,10 +82,10 @@ const Navbar = () => {
 
           <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4 border">
             <ThemeComponent />
-            <Link href="/login" className="text-md border">
+            <Link href="/login" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/login" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
               Sign in
             </Link>
-            <Link href="/signup" className="text-md border">
+            <Link href="/signup" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/signup" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
               Sign up
             </Link>
           </div>
@@ -109,12 +111,6 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             className="z-50 fixed left-0 w-64 h-full bg-white overflow-y-auto dark:bg-gray-800 shadow-md p-4 transform"
-            // initial={{ x: -280 }}
-            // animate={{ x: isOpen ? 0 : -300 }}
-            // transition={{ type: "spring", stiffness: 800, damping: 30 }}
-            // onClick={(e) => e.stopPropagation()}
-            // exit={{ x: isOpen ? -300 : 0 }}
-
             variants={{
               open: {
                 x: "0%",
@@ -147,7 +143,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.10 }}
                 className="flex w-full"
               >
                 <Link
@@ -161,11 +157,11 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.15 }}
                 className="flex w-full"
               >
                 <Link
-                  href={"/"}
+                  href={"/exams"}
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
@@ -175,11 +171,11 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.20 }}
                 className="flex w-full"
               >
                 <Link
-                  href={"/"}
+                  href={"/exams/upcomingexams"}
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
@@ -196,7 +192,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.25 }}
                 className="flex"
               >
                 <Link
@@ -210,12 +206,12 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.30 }}
                 className="flex"
               >
                 <Link
                   href="/signup"
-                  className="flex justify-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 border border"
+                  className="flex justify-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 border"
                   onClick={handleLinkClick}
                 >
                   Sign up

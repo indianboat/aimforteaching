@@ -42,7 +42,7 @@ export default function Home() {
             width={430}
             height={500}
             alt="home_image"
-            className="drop-shadow-md"
+            className="drop-shadow-md select-none"
           />
         </div>
       </div>
