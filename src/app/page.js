@@ -1,5 +1,6 @@
 import ExamUpdatesSection from "./components/ExamUpdatesSection";
 import GetStartedSection from "./components/GetStartedSection";
+import StatisticSection from "./components/StatisticSection";
 
 export default function Home() {
   return (
@@ -11,6 +12,10 @@ export default function Home() {
         <div className="container md:w-10/12 sm:w-11/12 mx-auto flex w-full border lg:px-4 md:px-3 sm:px-2 px-2 py-4">
           <ExamUpdatesSection />
         </div>
+      </div>
+
+      <div className="container md:w-10/12 sm:w-11/12 mx-auto my-20 flex w-full border lg:px-4 md:px-3 sm:px-2 px-2 py-4">
+        <StatisticSection />
       </div>
     </>
   );

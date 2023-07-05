@@ -7,7 +7,7 @@ const AboutUs = () => {
         <h1 className="border text-2xl font-bold">About us</h1>
         <h2 className="border text-lg mt-6">Hello Everyone,</h2>
         <p className="border text-justify mt-4 leading-relaxed">
-          Welcome to aimforteaching दोस्तों हमने यह WEBSITE सिर्फ और सिर्फ उन
+          Welcome to aimforteaching दोस्तों यह WEBSITE सिर्फ और सिर्फ उन
           लोगो के लिए है जो की किसी भी TEACHING EXAM (DSSSB, KVS, CTET, APS,
           NET, B.ED, REET, HTET, UPTET, SUPER-TET, B-TET, NCERT, NVS, SDMC, NDMC
           ETC.) की तैयारी कर रहे है या फिर वो लोग जो की पढ़ाई में रूचि रखने के

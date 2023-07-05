@@ -20,13 +20,13 @@ const Footer = () => {
               <form method="post" className="border md:w-[420px] w-full">
                 <div className="flex gap-x-2 md:flex-row sm:flex-col flex-col gap-y-4 w-full">
                   <input
-                    className="border ring-2 rounded-xl border-rose-900 px-4 py-2 w-full"
-                    type="text"
+                    className="border rounded-full border-rose-900 px-4 py-2 w-full outline-none bg-neutral-200 dark:bg-neutral-800"
+                    type="email"
                     placeholder="Enter your email address"
                     required
                   />
                   <button
-                    className="border px-4 py-2 ring-2 rounded-xl"
+                    className="border px-4 py-2 bg-neutral-800 rounded-full text-white focus:scale-95 transition-transform"
                     // onClick={(e) => e.preventDefault()}
                     type="submit"
                   >
@@ -138,7 +138,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="flex border flex-col w-auto md:text-start sm:text-start text-center">
-                  <h1 className="text-lg font-semibold md:text-right sm:text-right text-center">Soical</h1>
+                  <h1 className="text-lg font-semibold md:text-right sm:text-right text-center">Social</h1>
                   <ul className="flex flex-col gap-y-2 mt-3 md:items-end sm:items-end items-center">
                     <li>
                       <Link className="hover:text-blue-800 transition-colors" href="/">
