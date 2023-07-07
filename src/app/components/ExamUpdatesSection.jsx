@@ -17,7 +17,7 @@ const ExamUpdatesSection = () => {
     <>
       <div className="border w-full">
         <h1 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl border lg:text-left md:text-left sm:text-center text-center font-extrabold text-orange-700 dark:text-white">Everything your needs about exam updates</h1>
-        <div className="mt-12 border grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-8 sm:gap-7 gap-6">
+        <div className="mt-12 border grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-8 sm:gap-7 gap-6">
           <div className="border p-8 rounded-3xl bg-white/75 dark:bg-neutral-900 shadow-md hover:shadow-xl">
             <div className="border flex justify-center">
               <AiOutlineNotification size={48} className="border rounded-full p-3 w-16 h-16 bg-orange-300/100 dark:bg-neutral-800 text-orange-900 dark:text-white/90"/>
