@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { motion, AnimatePresence } from "framer-motion";
+import MegaMenuDropdown from "./MegaMenuDropdown";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.5,
-        staggerDirection: -1
+        staggerDirection: -1,
       },
     },
   };
@@ -46,10 +47,20 @@ const Navbar = () => {
     show: { y: "0", opacity: 1 },
   };
 
- 
+  //mega menu dropdown
+  const [dropdownIndex, setDropdownIndex] = useState(-1);
+
+  const toggleDropdown = (index) => {
+    if (index === dropdownIndex) {
+      setDropdownIndex(-1);
+    } else {
+      setDropdownIndex(index);
+    }
+  };
+
   return (
     <>
-      <nav className="fixed w-full border py-3 z-30 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
+      <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
           <div className="flex md:w-auto sm:w-full w-full items-center md:justify-center sm:justify-between justify-between border gap-x-4">
             <button
@@ -69,13 +80,33 @@ const Navbar = () => {
               <ThemeComponent />
             </div>
             <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4">
-              <Link href="/" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/" ? "text-blue-800 dark:text-orange-500" : "text-inherit"}`}>
+              <Link
+                href="/"
+                className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                  usePathname() == "/"
+                    ? "text-blue-800 dark:text-orange-500"
+                    : "text-inherit"
+                }`}
+              >
                 Home
               </Link>
-              <Link href="/exams" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/exams" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
-                Explore Exams
-              </Link>
-              <Link href="/exams/upcomingexams" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/exams/upcomingexams" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
+
+              <MegaMenuDropdown
+                nav="Explore Exams"
+                index={0}
+                dropdownIndex={dropdownIndex}
+                toggleDropdown={toggleDropdown}
+                data={"Hello world"}
+              />
+
+              <Link
+                href="/exams/upcomingexams"
+                className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                  usePathname() == "/exams/upcomingexams"
+                    ? "text-blue-800 dark:text-orange-500"
+                    : "text-inherit"
+                } `}
+              >
                 Upcoming Exams
               </Link>
             </div>
@@ -83,30 +114,61 @@ const Navbar = () => {
 
           <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4 border">
             <ThemeComponent />
-            <Link href="/login" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/login" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
+            <Link
+              href="/login"
+              className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                usePathname() == "/login"
+                  ? "text-blue-800 dark:text-orange-500"
+                  : "text-inherit"
+              } `}
+            >
               Sign in
             </Link>
-            <Link href="/signup" className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${usePathname() == "/signup" ? "text-blue-800 dark:text-orange-500" : "text-inherit"} `}>
+            <Link
+              href="/signup"
+              className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                usePathname() == "/signup"
+                  ? "text-blue-800 dark:text-orange-500"
+                  : "text-inherit"
+              } `}
+            >
               Sign up
             </Link>
           </div>
         </div>
       </nav>
 
-      {/* Drawer */}
+      {/* Drawer overlay */}
 
       <div
         className={`${
-          isOpen ? "z-40 absolute h-full w-full inset-0 transition-opacity" : ""
+          isOpen ? "z-40 absolute h-full top-[72.5px] w-full inset-0 transition-opacity" : "hidden"
         }`}
       >
         <div
           onClick={drawerHandler}
           className={`${
-            isOpen ? "inset-0 fixed w-full h-full bg-black opacity-50" : ""
+            isOpen ? "inset-0 fixed w-full top-[72.5px] h-full bg-black opacity-25" : "hidden"
           }`}
         ></div>
       </div>
+
+      {/* dropdown overlay */}
+
+      <div
+          className={`${
+            dropdownIndex > -1
+              ? "z-10 absolute lg:flex md:flex sm:hidden hidden h-full w-full top-[72.5px] inset-0 transition-opacity"
+              : "hidden"
+          }`}
+        >
+          <div
+            onClick={toggleDropdown}
+            className={`${
+              dropdownIndex > -1 ? "lg:flex md:flex sm:hidden hidden inset-0 fixed top-[72.5px] w-full h-full bg-black opacity-25" : "hidden"
+            }`}
+          ></div>
+        </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -144,7 +206,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.10 }}
+                transition={{ delay: 0.1 }}
                 className="flex w-full"
               >
                 <Link
@@ -172,7 +234,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.20 }}
+                transition={{ delay: 0.2 }}
                 className="flex w-full"
               >
                 <Link
@@ -207,7 +269,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.30 }}
+                transition={{ delay: 0.3 }}
                 className="flex"
               >
                 <Link
