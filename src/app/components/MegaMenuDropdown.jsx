@@ -17,9 +17,9 @@ function MegaMenuDropdown({ index, dropdownIndex, toggleDropdown, nav, data }) {
         >
           {nav}{" "}
           {isOpen ? (
-            <IoIosArrowUp className="text-rose-600" />
+            <IoIosArrowUp />
           ) : (
-            <IoIosArrowDown className="text-rose-600" />
+            <IoIosArrowDown />
           )}
         </div>
       </div>
@@ -36,7 +36,7 @@ function MegaMenuDropdown({ index, dropdownIndex, toggleDropdown, nav, data }) {
             exit={{ y : "-220%" }}
 
             transition={{ duration: 0.3, type : "spring" , damping:25, stiffness:700 }}
-            className="container shadow md:w-11/12 sm:w-full w-full mx-auto left-0 right-0 absolute border bg-red-500"
+            className="container shadow md:w-11/12 sm:w-full w-full mx-auto z-0 left-0 right-0 absolute border bg-red-500"
           >
             <div className="flex float-right border justify-end px-4">
               <button onClick={() => toggleDropdown(index)}>

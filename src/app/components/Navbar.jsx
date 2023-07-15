@@ -6,6 +6,7 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import { CgClose } from "react-icons/cg";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { HiOutlineDotsVertical } from "react-icons/hi";
 
 import { motion, AnimatePresence } from "framer-motion";
 import MegaMenuDropdown from "./MegaMenuDropdown";
@@ -15,12 +16,6 @@ const Navbar = () => {
 
   const drawerHandler = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleLinkClick = () => {
-    if (isOpen) {
-      drawerHandler();
-    }
   };
 
   useEffect(() => {
@@ -58,8 +53,48 @@ const Navbar = () => {
     }
   };
 
+  const handleLinkClick = () => {
+    if (isOpen) {
+      drawerHandler();
+    }
+  };
+
+  const handleMegaMenuClick = () => {
+    setDropdownIndex(-1);
+  };
+
+  // dropdown for login & signup
+
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // const toggleMenuDropdown = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
+  // const closeDropdownOnResize = () => {
+  //   if (window.matchMedia("(max-width: 768px)").matches) {
+  //     setIsMenuOpen(false);
+  //   }
+  //   if (window.matchMedia("(min-width: 1024px)").matches) {
+  //     setIsMenuOpen(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     closeDropdownOnResize();
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+
   return (
     <>
+
       <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
           <div className="flex md:w-auto sm:w-full w-full items-center md:justify-center sm:justify-between justify-between border gap-x-4">
@@ -72,7 +107,8 @@ const Navbar = () => {
             </button>
             <Link
               href="/"
-              className="font-semibold lg:text-2xl md:text-xl sm:text-xl text-md border"
+              onClick={handleMegaMenuClick}
+              className="flex font-semibold lg:text-2xl md:text-xl sm:text-xl text-md border"
             >
               AimForTeaching
             </Link>
@@ -81,6 +117,7 @@ const Navbar = () => {
             </div>
             <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4">
               <Link
+                onClick={handleMegaMenuClick}
                 href="/"
                 className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
                   usePathname() == "/"
@@ -100,8 +137,9 @@ const Navbar = () => {
               />
 
               <Link
+                onClick={handleMegaMenuClick}
                 href="/exams/upcomingexams"
-                className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                className={`lg:flex md:hidden sm:hidden hidden text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
                   usePathname() == "/exams/upcomingexams"
                     ? "text-blue-800 dark:text-orange-500"
                     : "text-inherit"
@@ -115,6 +153,7 @@ const Navbar = () => {
           <div className="lg:flex md:flex sm:hidden hidden items-center justify-center gap-x-4 border">
             <ThemeComponent />
             <Link
+              onClick={handleMegaMenuClick}
               href="/login"
               className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
                 usePathname() == "/login"
@@ -142,13 +181,17 @@ const Navbar = () => {
 
       <div
         className={`${
-          isOpen ? "z-40 absolute h-full top-[72.5px] w-full inset-0 transition-opacity" : "hidden"
+          isOpen
+            ? "z-40 absolute h-full top-[72.5px] w-full inset-0 transition-opacity"
+            : "hidden"
         }`}
       >
         <div
           onClick={drawerHandler}
           className={`${
-            isOpen ? "inset-0 fixed w-full top-[72.5px] h-full bg-black opacity-25" : "hidden"
+            isOpen
+              ? "inset-0 fixed w-full top-[72.5px] h-full bg-black opacity-25"
+              : "hidden"
           }`}
         ></div>
       </div>
@@ -156,20 +199,23 @@ const Navbar = () => {
       {/* dropdown overlay */}
 
       <div
+        className={`${
+          dropdownIndex > -1
+            ? "z-10 absolute lg:flex md:flex sm:hidden hidden h-full w-full top-[72.5px] inset-0 transition-opacity"
+            : "hidden"
+        }`}
+      >
+        <div
+          onClick={toggleDropdown}
           className={`${
             dropdownIndex > -1
-              ? "z-10 absolute lg:flex md:flex sm:hidden hidden h-full w-full top-[72.5px] inset-0 transition-opacity"
+              ? "lg:flex md:flex sm:hidden hidden inset-0 fixed top-[72.5px] w-full h-full bg-black opacity-25"
               : "hidden"
           }`}
-        >
-          <div
-            onClick={toggleDropdown}
-            className={`${
-              dropdownIndex > -1 ? "lg:flex md:flex sm:hidden hidden inset-0 fixed top-[72.5px] w-full h-full bg-black opacity-25" : "hidden"
-            }`}
-          ></div>
-        </div>
+        ></div>
+      </div>
 
+      {/* SIDE DRAWER */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

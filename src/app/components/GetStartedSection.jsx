@@ -74,7 +74,7 @@ const GetStartedSection = () => {
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
             className="border px-5 py-2 rounded-full bg-orange-400 dark:bg-orange-800 shadow-sm hover:shadow-md shadow-orange-700 text-white"
           >
-            <Link href="/">Get Started</Link>
+            <Link href="/signup">Get Started</Link>
           </motion.button>
         </motion.div>
       </div>
