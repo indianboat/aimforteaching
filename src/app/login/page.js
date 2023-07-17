@@ -22,7 +22,7 @@ const Signin = () => {
       <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto md:mt-24 sm:mt-28 mt-24 mb-10 border p-4">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-cols-1 justify-between gap-y-8">
           <div className="border md:rounded-tl-[50px] py-16 xl:px-28 lg:px-16 md:px-16 sm:px-8 px-2 bg-slate-50 dark:bg-neutral-900">
-            <h1 className="border font-semibold text-3xl drop-shadow">
+            <h1 className="font-semibold text-3xl drop-shadow">
               Welcome back
             </h1>
             <p className="border mt-2 text-slate-700 dark:text-slate-200">

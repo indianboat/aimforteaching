@@ -131,6 +131,7 @@ const ExploreSection = () => {
       redirectUrl: "/exams/gtet",
       delay:3.0
     },
+    
   ];
 
   return (

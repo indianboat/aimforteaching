@@ -10,6 +10,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 
 import { motion, AnimatePresence } from "framer-motion";
 import MegaMenuDropdown from "./MegaMenuDropdown";
+import CollapseButton from "./CollapseButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -252,7 +253,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.2 }}
                 className="flex w-full"
               >
                 <Link
@@ -266,21 +267,15 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0.4 }}
                 className="flex w-full"
-              >
-                <Link
-                  href={"/exams"}
-                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
-                  onClick={handleLinkClick}
-                >
-                  Explore Exams
-                </Link>
+              >   
+                <CollapseButton/>
               </motion.div>
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.6 }}
                 className="flex w-full"
               >
                 <Link
@@ -291,6 +286,80 @@ const Navbar = () => {
                   Upcoming Exams
                 </Link>
               </motion.div>
+
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.8 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Job Alert
+                </Link>
+              </motion.div>
+
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 1 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Syllabus
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 1.2 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Notes/Quizzes
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 1.4 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Current Affairs
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 1.6 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Recorded Videos
+                </Link>
+              </motion.div>
+
+
             </motion.div>
 
             <motion.div
@@ -301,7 +370,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.25 }}
+                transition={{ delay: 1.8 }}
                 className="flex"
               >
                 <Link
@@ -315,7 +384,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 2 }}
                 className="flex"
               >
                 <Link
