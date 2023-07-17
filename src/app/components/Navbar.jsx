@@ -253,7 +253,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.1 }}
                 className="flex w-full"
               >
                 <Link
@@ -267,7 +267,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.2 }}
                 className="flex w-full"
               >   
                 <CollapseButton/>
@@ -275,7 +275,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.3 }}
                 className="flex w-full"
               >
                 <Link
@@ -290,7 +290,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.4 }}
                 className="flex w-full"
               >
                 <Link
@@ -305,7 +305,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 1 }}
+                transition={{ delay: 0.5 }}
                 className="flex w-full"
               >
                 <Link
@@ -319,7 +319,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 0.6 }}
                 className="flex w-full"
               >
                 <Link
@@ -333,7 +333,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 1.4 }}
+                transition={{ delay: 0.7 }}
                 className="flex w-full"
               >
                 <Link
@@ -347,7 +347,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 1.6 }}
+                transition={{ delay: 0.8 }}
                 className="flex w-full"
               >
                 <Link
@@ -370,7 +370,7 @@ const Navbar = () => {
             >
               <motion.div
                 variants={item}
-                transition={{ delay: 1.8 }}
+                transition={{ delay: 0.9 }}
                 className="flex"
               >
                 <Link
@@ -384,7 +384,7 @@ const Navbar = () => {
 
               <motion.div
                 variants={item}
-                transition={{ delay: 2 }}
+                transition={{ delay: 1 }}
                 className="flex"
               >
                 <Link
