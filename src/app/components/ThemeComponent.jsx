@@ -17,6 +17,7 @@ const ThemeComponent = () => {
       <button
         className="hover:bg-gray-100 p-2 rounded-full transition-colors hover:dark:bg-[#4B5563]"
         onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+        aria-labelledby="theme-icon"
       >
         {resolvedTheme === "dark" ? (
           <TbSunLow size={20} className="text-gray-300" />
