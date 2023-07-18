@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import CollapseButton from "./CollapseButton";
+import Dropdown from "./Dropdown";
 
 const Navbar = () => {
- 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const drawerHandler = () => {
@@ -57,6 +57,8 @@ const Navbar = () => {
     }
   };
 
+
+
   return (
     <>
       <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
@@ -92,19 +94,22 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
-
                 <li>
                   <Link
-                    href="/"
-                    className={`flex text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
-                      usePathname() == "/exams/upcomingexams"
+                    href="/exams"
+                    className={`text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
+                      usePathname() == "/exams"
                         ? "text-blue-800 dark:text-orange-500"
                         : "text-inherit"
-                    } `}
+                    }`}
                   >
                     Explore Exams
                   </Link>
                 </li>
+
+                  {/* <li>
+                    <Dropdown />
+                  </li> */}
 
                 <li>
                   <Link

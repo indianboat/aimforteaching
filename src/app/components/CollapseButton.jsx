@@ -71,7 +71,7 @@ const CollapseButton = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ type: "spring", duration: 0.3 }}
+              transition={{ duration:0.2 }}
               className="overflow-hidden w-full mt-2"
             >
               <div className="px-4 py-2 bg-slate-50 rounded-xl dark:bg-slate-900">
