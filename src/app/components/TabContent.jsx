@@ -107,13 +107,13 @@ const TabContent = ({ activeTab }) => {
       exit="exit"
       variants={variants}
       transition={{ duration: 0.3 }}
-      className="border p-6 rounded-md shadow-md h-full"
+      className="border px-4 py-3 rounded-md shadow-md h-full"
     >
       {activeTab === 1 && (
-        <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
           {examTypes.map((exam) => {
             return (
-              <Link className="border hover:bg-slate-100 dark:hover:bg-neutral-950 shadow hover:shadow-md flex flex-col px-4 py-3 h-full w-full rounded-lg text-center justify-center items-center" href={exam.redirectUrl}>
+              <Link key={exam.examName} className="border hover:bg-slate-100 dark:hover:bg-neutral-950 shadow hover:shadow-md flex flex-col px-4 py-3 h-full w-full rounded-lg text-center justify-center items-center" href={exam.redirectUrl}>
                   <p className="text-md font-semibold">{exam.examName}</p>
                   <p className="text-sm text-gray-500 dark:text-neutral-300">{exam.examState}</p>
               </Link>
@@ -121,7 +121,7 @@ const TabContent = ({ activeTab }) => {
           })}
         </div>
       )}
-      {activeTab === 2 && <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 gap-4">
+      {activeTab === 2 && <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
       <Link className="border hover:bg-slate-100 dark:hover:bg-neutral-950 shadow hover:shadow-md flex flex-col px-4 py-3 h-full w-full rounded-lg text-center justify-center items-center" href="/">
                   <p className="text-md font-semibold">KVS</p>
                   <p className="text-sm text-gray-500 dark:text-neutral-300">Govt of India</p>

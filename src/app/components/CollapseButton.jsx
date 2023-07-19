@@ -53,6 +53,10 @@ const CollapseButton = () => {
       index: 9,
       examName: "EMRC Exam",
     },
+    {
+      index: 10,
+      examName: "RPSC Exam",
+    },
   ];
 
   return (

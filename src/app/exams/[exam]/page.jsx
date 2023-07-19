@@ -1,18 +1,31 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import BreadcrumSection from "@/app/components/Breadcrum";
+import { usePathname } from "next/navigation";
 
 const Exam = () => {
   const { exam } = useParams();
-
-  console.log(exam);
+  const breadcrumbLinks = [
+    { label: "Home", path: "/" },
+    { label: "Exams", path: "/exams" },
+    { label: exam, path: exam },
+  ];
 
   return (
     <>
-      <div className="container md:w-10/12 sm:w-11/12 mx-auto md:mt-24 sm:mt-28 mt-24 flex w-full border lg:px-4 md:px-3 sm:px-2 px-2 py-4">
-        {exam}
+    <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto md:my-24 sm:my-28 my-24 border p-4">
+      <div className="border">
+        <div className="border mb-4 px-4">
+          <BreadcrumSection links={breadcrumbLinks}/>
+        </div>
+        <h1 className="text-2xl font-bold border px-4">{exam.toUpperCase()} Exam</h1>
+        <div className="border px-4 mt-8">
+          All about ctet here
+        </div>
       </div>
-    </>
+    </div>
+  </>
   );
 };
 

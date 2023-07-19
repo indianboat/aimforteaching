@@ -181,11 +181,18 @@ const ExploreSection = () => {
       delay:2.1
     },
     {
+      examName: "RPSC",
+      examState: "Rajasthan",
+      logoUrl: "/logos/ctet.png",
+      redirectUrl: "/exams/rpsc",
+      delay:2.2
+    },
+    {
       examName: "B.Ed Entrance",
       examState: "Delhi",
       logoUrl: "/logos/ctet.png",
       redirectUrl: "/exams/bedexam",
-      delay:2.2
+      delay:2.3
     },
   ];
 
