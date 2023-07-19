@@ -226,7 +226,7 @@ const Navbar = () => {
                 transition={{ delay: 0.2 }}
                 className="flex w-full"
               >
-                <CollapseButton />
+                <CollapseButton onClick={handleLinkClick} />
               </motion.div>
 
               <motion.div

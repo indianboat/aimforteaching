@@ -5,7 +5,7 @@ import TabContent from "../components/TabContent";
 import BreadcrumSection from "../components/Breadcrum";
 import { usePathname } from "next/navigation";
 
-const tabs = ["All State TET", "Central Exams", "B.Ed Entrance", "Syllabus", "Notes", "Previous Year Papers"];
+const tabs = ["All State TET", "Central Exams", "B.Ed Entrance"];
 
 const ExploreExams = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -25,7 +25,7 @@ const ExploreExams = () => {
           </div>
           <h1 className="text-2xl font-bold border px-4">Explore Exams</h1>
           <div className="border flex lg:flex-row md:flex-row sm:flex-col flex-col mt-6">
-            <div className="border lg:w-1/5 md:w-2/5 sm:w-full w-full p-3 flex gap-y-3 flex-col">
+          <div className="border lg:w-1/5 md:w-2/5 sm:w-full w-full h-full p-3 gap-6 grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-3 grid-cols-1 gap-y-3 flex-col">
               {tabs.map((tab, index) => (
                 <button
                   key={index}

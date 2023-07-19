@@ -5,57 +5,72 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
-const CollapseButton = () => {
+const CollapseButton = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
 
+  // const handleToggleCollapse = () =>{
+  //   setIsOpen(false);
+  // }
+
   const examTypes = [
     {
       index: 0,
       examName: "All TET Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 1,
       examName: "KVS Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 2,
       examName: "DSSSB Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 3,
       examName: "NVS Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 4,
       examName: "Super TET Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 5,
       examName: "AWES Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 6,
       examName: "NDMC Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 7,
       examName: "SDMC Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 8,
       examName: "B.Ed Entrance",
+      redirectUrl:"/exams"
     },
     {
       index: 9,
       examName: "EMRC Exam",
+      redirectUrl:"/exams"
     },
     {
       index: 10,
       examName: "RPSC Exam",
+      redirectUrl:"/exams"
     },
   ];
 
@@ -84,8 +99,9 @@ const CollapseButton = () => {
                     return (
                       <li className="flex w-full" key={exam.index}>
                         <Link
+                          onClick={props.onClick}
                           className="transition-all text-sm w-full font-medium hover:text-blue-800 dark:hover:text-orange-700 px-2 py-[1px]"
-                          href={"/"}
+                          href={exam.redirectUrl}
                         >
                           {exam.examName}
                         </Link>
