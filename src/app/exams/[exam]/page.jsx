@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import BreadcrumSection from "@/app/components/Breadcrum";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Notification from "@/app/components/TabsContentComponents/Notification";
 
 const Exam = () => {
   const { exam } = useParams();
@@ -45,7 +46,7 @@ const Exam = () => {
             {exam.toUpperCase()} Exam
           </h1>
           <div className="border flex lg:flex-row md:flex-row sm:flex-col flex-col mt-6">
-            <div className="border lg:w-1/5 md:w-2/5 sm:w-full w-full p-3 gap-6 grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-y-3 flex-col">
+            <div className="border lg:w-1/5 md:w-2/5 sm:w-full w-full p-3 gap-6 grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-2 grid-cols-2 gap-y-3 flex-col">
               {tabs.map((tab, index) => (
                 <button
                   key={index}
@@ -71,7 +72,7 @@ const Exam = () => {
                 transition={{ duration: 0.3 }}
                 className="border px-4 py-3 rounded-md shadow-md h-full"
               >
-                {activeTab === 1 && <div className="border">hello world</div>}
+                {activeTab === 1 && <div className="border"><Notification/></div>}
                 {activeTab === 2 && <div className="border">hello world</div>}
                 {activeTab === 3 && <div className="border">hello world</div>}
               </motion.div>
