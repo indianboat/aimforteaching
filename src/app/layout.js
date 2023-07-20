@@ -4,8 +4,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Providers from "./components/Providers";
 import NextTopLoader from "nextjs-toploader";
-import { Suspense } from 'react'
-import Loading from "./Loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,9 +13,7 @@ const poppins = Poppins({
 export const metadata = {
   title: "AimForTeaching",
   description: "Government teaching exams preparation",
-  
 };
-
 
 export default function RootLayout({ children }) {
   return (
@@ -32,9 +28,7 @@ export default function RootLayout({ children }) {
         />
         <Providers>
           <Navbar />
-          <Suspense fallback={<Loading/>}>
           {children}
-          </Suspense>
           <Footer />
         </Providers>
       </body>

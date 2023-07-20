@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const Notification = () => {
+const Notification = ({ examName }) => {
   return (
     <>
       <div className="border flex flex-col">
-        <p className="text-xl font-bold">CTET Notification 2023 Out</p>
+        <p className="text-xl font-bold">{examName.toUpperCase()} Notification 2023 Out</p>
         <p className="italic mt-2">CTET or Central Teacher Eligibility Test</p>
         <p className="mt-2 text-justify tracking-normal leading-relaxed">
           It is a national-level examination conducted by CBSE to determine the

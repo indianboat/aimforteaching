@@ -5,6 +5,7 @@ import BreadcrumSection from "@/app/components/Breadcrum";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Notification from "@/app/components/TabsContentComponents/Notification";
+import Subjects from "@/app/components/TabsContentComponents/Subjects";
 
 const Exam = () => {
   const { exam } = useParams();
@@ -12,6 +13,7 @@ const Exam = () => {
 
   const tabs = [
     "Notification 2023",
+    "Subjects",
     "Syllabus",
     "Notes Pdf",
     "Study Material",
@@ -21,6 +23,7 @@ const Exam = () => {
     "Exam Pattern",
     "Previous Year Papers",
     "Exam Tips",
+    "FAQ"
   ];
 
   const breadcrumbLinks = [
@@ -72,8 +75,8 @@ const Exam = () => {
                 transition={{ duration: 0.3 }}
                 className="border px-4 py-3 rounded-md shadow-md h-full"
               >
-                {activeTab === 1 && <div className="border"><Notification/></div>}
-                {activeTab === 2 && <div className="border">hello world</div>}
+                {activeTab === 1 && <div className="border"><Notification examName={exam}/></div>}
+                {activeTab === 2 && <div className="border"><Subjects examName={exam}/></div>}
                 {activeTab === 3 && <div className="border">hello world</div>}
               </motion.div>
             </div>

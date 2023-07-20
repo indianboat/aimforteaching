@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import Skeleton from "./Skeleton";
 
 const variants = {
   hidden: { opacity: 0, y: -10 },
@@ -19,7 +18,7 @@ const TabContent = ({ activeTab }) => {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const response = await fetch("http://localhost:1337/api/all-state-tets");
+      const response = await fetch("https://aimforteaching-backend.onrender.com/api/all-state-tets");
       const data = await response.json();
       setLoading(false);
       setAllTetExamList(data.data);
@@ -40,13 +39,13 @@ const TabContent = ({ activeTab }) => {
     >
       {activeTab === 1 &&
         (loading ? (
-          <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
-            <Skeleton height={60} />
-            <Skeleton height={60} />
-            <Skeleton height={60} />
-            <Skeleton height={60} />
-            <Skeleton height={60} />
-            <Skeleton height={60} />
+          <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 gap-4">
+            <Skeleton/>
+            <Skeleton/>
+            <Skeleton/>
+            <Skeleton/>
+            <Skeleton/>
+            <Skeleton/>
           </div>
         ) : allTetExamList.length < 0 ? (
           <Skeleton />
