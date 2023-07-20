@@ -124,7 +124,7 @@ const ExploreSection = () => {
 
   return (
     <>
-      <div className="border w-full">
+      <div ref={ref} className="border w-full">
         <motion.h1
           initial="hidden"
           animate={controls}
@@ -141,11 +141,10 @@ const ExploreSection = () => {
           {exams.map((exam, index) => {
             return (
               <Link
-                ref={ref}
                 href={`exams/${exam.examName
                   .replaceAll(" ", "")
                   .toLowerCase()}`}
-                key={index}
+                  key={index}
               >
                 <motion.div
                   initial="hidden"

@@ -45,10 +45,10 @@ const StatisticSection = () => {
             className="border px-4 py-8 rounded-3xl bg-orange-200 dark:bg-neutral-700 shadow-md hover:shadow-xl"
           >
             <h1 className="border text-center text-lg font-semibold">
-              Recorded Live Classes
+              Youtube Classes
             </h1>
             <div className="border flex justify-center mt-4 text-4xl text-orange-950 dark:text-white/80 font-extrabold text-center">
-              <Counter number={455} /> +
+              <Counter number={1000} /> +
             </div>
           </motion.div>
 

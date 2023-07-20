@@ -241,28 +241,28 @@ const Footer = () => {
               </div>
               <div className="flex gap-x-4 justify-center items-center">
                 <Link
-                  className="flex border"
+                  className="flex border text-[#3b5998]"
                   href="/"
                   aria-labelledby="facebooklink"
                 >
                   <SiFacebook size={22} />
                 </Link>
                 <Link
-                  className="flex border"
+                  className="flex border text-[#3b5998]"
                   href="/"
                   aria-labelledby="telegramlink"
                 >
                   <SiTelegram size={22} />
                 </Link>
                 <Link
-                  className="flex border"
+                  className="flex border text-[#00405d]"
                   href="/"
                   aria-labelledby="instagramlink"
                 >
                   <RiInstagramFill size={22} />
                 </Link>
                 <Link
-                  className="flex border"
+                  className="flex border text-[#0a66c2]"
                   href="/"
                   aria-labelledby="linkedinlink"
                 >
@@ -277,5 +277,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-//  gap in mobile

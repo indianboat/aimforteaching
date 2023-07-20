@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import CollapseButton from "./CollapseButton";
-import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -61,7 +60,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow-md">
+      <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
           <div className="flex md:w-auto sm:w-full w-full items-center md:justify-center sm:justify-between justify-between border gap-x-4">
             <button
@@ -281,7 +280,7 @@ const Navbar = () => {
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
-                  Notes/Quizzes
+                  Notes/Daily Quizzes
                 </Link>
               </motion.div>
 
@@ -309,9 +308,40 @@ const Navbar = () => {
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
+                  Results
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 0.9 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Admit Card
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={item}
+                transition={{ delay: 1 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
                   Learn through videos
                 </Link>
               </motion.div>
+
+
+
             </motion.div>
 
             <motion.div

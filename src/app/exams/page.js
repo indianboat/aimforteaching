@@ -17,7 +17,7 @@ const ExploreExams = () => {
 
   return (
     <>
-      <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto md:my-24 sm:my-28 my-24 border p-4">
+      <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto lg:my-6 md:my-6 sm:my-28 my-24 border p-4">
         <div className="border">
           <div className="border mb-4 px-4">
             <BreadcrumSection links={breadcrumbLinks}/>

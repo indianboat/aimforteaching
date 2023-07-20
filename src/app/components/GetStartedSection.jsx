@@ -91,9 +91,10 @@ const GetStartedSection = () => {
       >
         <Image
           src="/bg3.png"
-          width={330}
-          height={400}
+          width={300}
+          height={180}
           alt="home_image"
+          priority
           className="drop-shadow-md select-none"
         />
       </motion.div>
