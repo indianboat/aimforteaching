@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <SocialIcons/>
-      <div className="border w-full pb-8 bg-[url(/bgs/bg-2.png)] dark:bg-none bg-cover bg-top">
-        <div className="container flex md:w-10/12 sm:w-11/12 w-full md:flex-row sm:flex-col flex-col mx-auto my-6 border lg:px-4 md:px-3 sm:px-2 px-2 py-4 gap-y-8">
+      <div className="border w-full lg:mt-0 md:mt-0 sm:mt-24 mt-24 pb-8 bg-[url(/bgs/bg-2.png)] dark:bg-none bg-cover bg-top">
+        <div className="container flex md:w-10/12 sm:w-11/12 w-full md:flex-row sm:flex-col flex-col mx-auto my-2 border lg:px-4 md:px-3 sm:px-2 px-2 py-4 gap-y-8">
           <GetStartedSection />
         </div>
       </div>

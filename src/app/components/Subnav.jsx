@@ -12,7 +12,7 @@ const Subnav = () => {
 
   return (
     <>
-      <nav className="w-full mt-[76px] mb-4 border py-3 bg-[#F5F7F8] dark:bg-neutral-800 lg:flex md:flex sm:hidden hidden">
+      <nav className="w-full mt-[76px] border py-3 bg-[#F5F7F8] dark:bg-neutral-800 lg:flex md:flex sm:hidden hidden">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
           <div className="border text-center w-full gap-8 grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2">
             {navs.map((val, index) => {
