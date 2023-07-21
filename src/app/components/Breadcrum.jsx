@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {RiArrowRightSLine} from "react-icons/ri";
 
 const Breadcrumb = ({ links }) => {

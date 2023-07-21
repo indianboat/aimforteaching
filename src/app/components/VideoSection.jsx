@@ -45,7 +45,7 @@ const VideoSection = () => {
             className="rounded-2xl w-full"
             width="500"
             height="370"
-            src="https://www.youtube.com/embed/oV1y6lVjE_4"
+            src="https://www.youtube-nocookie.com/embed/oV1y6lVjE_4"
             title="APS (AWES)-2022 Full Notification | Eligibility, Age, fee, Important Dates | Aim for Teaching"
           ></motion.iframe>
           <motion.iframe
@@ -59,7 +59,7 @@ const VideoSection = () => {
             className="rounded-2xl w-full"
             width="500"
             height="370"
-            src="https://www.youtube.com/embed/_q4lRD2-E_g"
+            src="https://www.youtube-nocookie.com/embed/_q4lRD2-E_g"
             title="Rajasthan 2022 RPSC School Lecturer Recruitment, Exam Date, Syllabus, Fee Age 2022"
           ></motion.iframe>
         </div>
