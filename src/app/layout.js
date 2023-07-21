@@ -5,6 +5,8 @@ import "./globals.css";
 import Providers from "./components/Providers";
 import NextTopLoader from "nextjs-toploader";
 import Subnav from "./components/Subnav";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +32,9 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar />
           <Subnav />
+          <Suspense fallback={<Loading/>}>
           {children}
+          </Suspense>
           <Footer />
         </Providers>
       </body>

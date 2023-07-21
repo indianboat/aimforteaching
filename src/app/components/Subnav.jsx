@@ -5,7 +5,7 @@ const Subnav = () => {
   const navs = [
     {
       name: "Upcoming Exams",
-      link: "/upcomingexams",
+      link: "/",
     },
     {
       name: "Current Affairs",
@@ -13,7 +13,7 @@ const Subnav = () => {
     },
     {
       name: "Results",
-      link: "/",
+      link: "/results",
     },
     {
       name: "Admit Cards",
@@ -39,7 +39,7 @@ const Subnav = () => {
                 <Link
                   href={val.link}
                   key={index}
-                  className="border line-clamp-1 overflow-hidden text-sm px-4 py-2 rounded-full transition-colors font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]"
+                  className="border line-clamp-1 bg-white dark:bg-neutral-950 overflow-hidden text-sm px-4 py-2 rounded-full transition-colors font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]"
                 >
                   {val.name}
                 </Link>
@@ -48,7 +48,7 @@ const Subnav = () => {
 
             <Link
               href="/"
-              className="border text-sm text-blue-700 dark:text-orange-600 transition-colors dark:hover:text-white px-4 py-2 rounded-full font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]"
+              className="border text-sm bg-white dark:bg-neutral-950 transition-colors dark:hover:text-white px-4 py-2 rounded-full font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]"
             >
               Ask Query
             </Link>

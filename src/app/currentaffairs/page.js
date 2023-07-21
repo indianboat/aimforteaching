@@ -20,9 +20,9 @@ const page = async () => {
         <div className="border mt-4 flex items-center">
           <h2 className="text-2xl font-bold flex">Current Affairs</h2>
         </div>
-        <div className="border mt-4 flex flex-col">
+        <div className="border mt-4 overflow-auto h-auto rounded-lg dark:bg-zinc-900 shadow-md p-4">
           {current_affairs.data.length <= 0
-            ? <p className="text-gray-500 dark:text-gray-200">No Current Affairs</p>
+            ? <div className="text-gray-500 dark:text-gray-200">No Current Affairs</div>
             : current_affairs.data?.map((val, index) => {
                 return (
                   <Link
