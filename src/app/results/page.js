@@ -22,7 +22,7 @@ const Results = async () => {
           {results.data.length <= 0 ? (
             <div className="text-gray-500 dark:text-gray-200">No Result Found</div>
           ) : (
-            <ResultComponent results={results} />
+            <ResultComponent results={results.data} />
           )}
         </div>
       </div>
