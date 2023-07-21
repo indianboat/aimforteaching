@@ -33,7 +33,7 @@ const Subnav = () => {
     <>
       <nav className="w-full mt-[76px] border py-3 bg-[#F5F7F8] dark:bg-neutral-800 lg:flex md:flex sm:hidden hidden">
         <div className="container md:w-11/12 sm:w-full w-full mx-auto lg:px-4 md:px-3 sm:px-2 px-2 py-2 border flex justify-between">
-          <div className="border text-center gap-2 w-full flex flex-row justify-normal flex-wrap">
+          <div className="border text-center w-full flex flex-row flex-wrap gap-2 justify-normal">
             {navs.map((val, index) => {
               return (
                 <Link

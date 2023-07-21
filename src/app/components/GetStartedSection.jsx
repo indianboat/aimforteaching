@@ -35,7 +35,7 @@ const GetStartedSection = () => {
         >
           <h1 className="border lg:text-5xl md:text-3xl sm:text-3xl text-2xl font-extrabold lg:text-start md:text-left sm:text-center text-center drop-shadow-md">
             Great Place To{" "}
-            <span className="text-transparent bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text drop-shadow-md">
+            <span className="text-transparent bg-gradient-to-r from-orange-500 to-rose-500 bg-clip-text drop-shadow-md">
               Learn
             </span>
           </h1>
@@ -72,7 +72,7 @@ const GetStartedSection = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            className="border px-5 py-2 rounded-full bg-orange-400 dark:bg-orange-800 shadow-sm hover:shadow-md shadow-orange-700 text-white"
+            className="border px-5 py-2 rounded-full bg-[#F4164C] dark:bg-orange-800 shadow-sm hover:shadow-md shadow-orange-700 text-white"
           >
             <Link href="/signup">Get Started</Link>
           </motion.button>

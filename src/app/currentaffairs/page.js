@@ -1,5 +1,5 @@
 import React from "react";
-import getCurrentAffairs from "../../../utils/getCurrentAffairs";
+import getCurrentAffairs from "../utils/getCurrentAffairs";
 import Link from "next/link";
 import Breadcrumb from "../components/Breadcrum";
 
@@ -23,9 +23,10 @@ const page = async () => {
         <div className="border mt-4 flex flex-col">
           {current_affairs.data.length <= 0
             ? <p className="text-gray-500 dark:text-gray-200">No Current Affairs</p>
-            : current_affairs.data?.map((val) => {
+            : current_affairs.data?.map((val, index) => {
                 return (
                   <Link
+                    key={index}
                     className="flex w-fit border hover:text-blue-600"
                     href={`/currentaffairs/${new Date(val.attributes.createdAt)
                       .toLocaleDateString()
