@@ -17,14 +17,22 @@ const Subnav = () => {
     },
     {
       name: "Admit Cards",
-      link: "/",
+      link: "/admitcards",
     },
     {
       name: "Daily Quizzes",
       link: "/",
     },
     {
-      name: "Free Notes Pdf",
+      name: "Study Material PDFs",
+      link: "/",
+    },
+    {
+      name: "Notes or Tricks",
+      link: "/",
+    },
+    {
+      name: "Videos",
       link: "/",
     },
   ];

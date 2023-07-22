@@ -105,23 +105,6 @@ const Navbar = () => {
                     Explore Exams
                   </Link>
                 </li>
-
-                  {/* <li>
-                    <Dropdown />
-                  </li> */}
-
-                <li>
-                  <Link
-                    href="/exams/upcomingexams"
-                    className={`lg:flex md:hidden sm:hidden hidden text-md border hover:text-blue-900 dark:hover:text-orange-700 ${
-                      usePathname() == "/exams/upcomingexams"
-                        ? "text-blue-800 dark:text-orange-500"
-                        : "text-inherit"
-                    } `}
-                  >
-                    Upcoming Exams
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -318,7 +301,7 @@ const Navbar = () => {
                 className="flex w-full"
               >
                 <Link
-                  href={"/"}
+                  href={"/admitcards"}
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
