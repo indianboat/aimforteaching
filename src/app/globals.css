@@ -24,3 +24,7 @@ body{
 [class='dark'] body {
   background-color: #111314;
 }
+
+.swiper-slide{
+  width: fit-content !important;
+}

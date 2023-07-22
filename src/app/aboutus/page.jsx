@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <>
-      <div className="container flex flex-col md:w-10/12 sm:w-11/12 w-full mx-auto md:my-32 sm:my-28 my-24 border p-4 shadow">
+      <div className="container flex flex-col md:w-10/12 sm:w-11/12 w-full mx-auto my-6 border p-4 shadow">
         <h1 className="border text-2xl font-bold">About us</h1>
         <h2 className="border text-lg mt-6">Hello Everyone,</h2>
         <p className="border text-justify mt-4 leading-relaxed">
