@@ -1,8 +1,8 @@
 export default function Loading() {
   return (
     <>
-      <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto lg:my-6 md:mt-6 sm:mt-28 mt-24 mb-10 border p-4">
-        <div className="border">Loading please Wait...</div>
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white/50 dark:bg-neutral-700/50 z-50">
+        <div className="border-t-4 border-blue-500 dark:border-orange-500 border-solid rounded-full animate-spin h-16 w-16"></div>
       </div>
     </>
   );

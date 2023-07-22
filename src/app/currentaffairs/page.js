@@ -27,7 +27,7 @@ const page = async () => {
                 return (
                   <Link
                     key={index}
-                    className="flex w-fit border hover:text-blue-600"
+                    className="flex w-fit border hover:text-blue-600 dark:hover:text-orange-600"
                     href={`/currentaffairs/${new Date(val.attributes.createdAt)
                       .toLocaleDateString()
                       .replaceAll("/", "-")}`}
@@ -35,7 +35,7 @@ const page = async () => {
                     {new Date(val.attributes.createdAt).toDateString()}
                   </Link>
                 );
-              })}
+              }).reverse()}
         </div>
       </div>
     </>

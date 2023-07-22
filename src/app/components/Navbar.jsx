@@ -217,7 +217,7 @@ const Navbar = () => {
                 className="flex w-full"
               >
                 <Link
-                  href={"/exams/upcomingexams"}
+                  href={"/upcomingexams"}
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >

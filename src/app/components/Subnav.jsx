@@ -1,39 +1,49 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-import React from "react";
 
 const Subnav = () => {
   const navs = [
     {
       name: "Upcoming Exams",
-      link: "/",
+      link: "/upcomingexams",
+      active:usePathname() === "/upcomingexams" ? true : false
     },
     {
       name: "Current Affairs",
       link: "/currentaffairs",
+      active:usePathname() === "/currentaffairs" ? true : false
     },
     {
       name: "Results",
       link: "/results",
+      active:usePathname() === "/results" ? true : false
     },
     {
       name: "Admit Cards",
       link: "/admitcards",
+      active:usePathname() === "/admitcards" ? true : false
     },
     {
       name: "Daily Quizzes",
-      link: "/",
+      link: "/dailyquizzes",
+      active:usePathname() === "/dailyquizzes" ? true : false
     },
     {
-      name: "Study Material PDFs",
-      link: "/",
+      name: "Subject wise Quizzes",
+      link: "/subject-wise-quizzes",
+      active:usePathname() === "/subject-wise-quizzes" ? true : false
     },
     {
       name: "Notes or Tricks",
-      link: "/",
+      link: "/notes-tricks",
+      active:usePathname() === "/notes-tricks" ? true : false
     },
     {
       name: "Videos",
-      link: "/",
+      link: "/videos",
+      active:usePathname() === "/videos" ? true : false
     },
   ];
 
@@ -47,7 +57,7 @@ const Subnav = () => {
                 <Link
                   href={val.link}
                   key={index}
-                  className="border line-clamp-1 bg-white dark:bg-neutral-950 overflow-hidden text-sm px-4 py-2 rounded-full transition-colors font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]"
+                  className={`border line-clamp-1 ${val.active ? "bg-[#F4194B] dark:bg-[#F75C37] text-white" : "bg-white"} dark:bg-neutral-950 overflow-hidden text-sm px-4 py-2 rounded-full transition-colors font-medium hover:bg-[#F4194B] hover:text-white dark:hover:bg-[#F75C37]`}
                 >
                   {val.name}
                 </Link>

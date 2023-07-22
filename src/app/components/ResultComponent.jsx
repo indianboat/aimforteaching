@@ -32,14 +32,14 @@ const ResultComponent = ({ results }) => {
                 <td className="px-4 py-2">
                   <Link
                     href={item.attributes.result_link}
-                    className="hover:text-blue-600"
+                    className="hover:text-blue-600 dark:hover:text-orange-600"
                     target="_blank"
                   >
                     Click Here
                   </Link>
                 </td>
               </motion.tr>
-            ))}
+            )).reverse()}
         </tbody>
       </table>
     </>
