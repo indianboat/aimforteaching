@@ -5,46 +5,40 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const CurrentAffairs = () => {
-  const [loading, setLoading] = useState(false);
-  const { date } = useParams();
+  const { id } = useParams();
 
   const breadcrumbLinks = [
     { label: "Home", path: "/" },
     { label: "Current Affairs", path: "/currentaffairs" },
-    { label: date, path: `/currentaffairs/${date}` },
+    { label: id, path: `/currentaffairs/${id}` },
   ];
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function getCurrentAffairs() {
       setLoading(true);
       const getCurrentAffairs = await fetch(
-        "https://aimforteaching-backend.onrender.com/api/current-affairs",
+        `https://aimforteaching-backend.onrender.com/api/current-affairs/${id}`,
         { cache: "no-cache" }
       );
       const ca = await getCurrentAffairs.json();
+      setLoading(false);
 
       const htmlContainerCurrentAffairs = document.getElementById(
         "htmlContainerCurrentAffairs"
       );
       const htmlContainerDate = document.getElementById("htmlContainerDate");
 
-      setLoading(false);
-
       if (loading) {
-        htmlContainerCurrentAffairs.innerText = "Loading...";
-        htmlContainerDate.innerText = "Loading...";
+        htmlContainerCurrentAffairs.innerHTML = "Loading...";
+        htmlContainerDate.innerHTML = "Loading...";
       } else {
-        for (let i = 0; i < ca.data.length; i++) {
-          const dd = new Date(ca.data[i].attributes.createdAt).getDate();
-          const mm = new Date(ca.data[i].attributes.createdAt).getMonth();
-          const yyyy = new Date(ca.data[i].attributes.createdAt).getFullYear();
-          const element = `${dd}-${mm + 1}-${yyyy}`;
-          if (element == date) {
-            htmlContainerCurrentAffairs.innerHTML =
-              ca?.data[i]?.attributes?.current_affairs_list;
-            htmlContainerDate.innerHTML = element;
-          }
-        }
+        htmlContainerCurrentAffairs.innerHTML =
+          ca?.data?.attributes.current_affairs_list;
+        htmlContainerDate.innerHTML = new Date(
+          ca?.data?.attributes.createdAt
+        ).toDateString();
       }
     }
     getCurrentAffairs();
@@ -58,9 +52,12 @@ const CurrentAffairs = () => {
         </div>
         <div className="border mt-4 flex justify-between items-center">
           <h2 className="text-2xl font-bold flex">Current Affairs</h2>
-          <div className="flex font-semibold" id="htmlContainerDate"></div>
         </div>
-        <div className="border mt-4">
+        <div
+          className="border flex mt-4 font-medium text-neutral-600 dark:text-neutral-300"
+          id="htmlContainerDate"
+        ></div>
+        <div className="border mt-2">
           <div id="htmlContainerCurrentAffairs"></div>
         </div>
       </div>
