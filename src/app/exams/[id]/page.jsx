@@ -2,14 +2,31 @@
 
 import { useParams } from "next/navigation";
 import BreadcrumSection from "@/app/components/Breadcrum";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Notification from "@/app/components/TabsContentComponents/Notification";
 import Subjects from "@/app/components/TabsContentComponents/Subjects";
 
 const Exam = () => {
-  const { exam } = useParams();
+
+  const { id } = useParams();
   const [activeTab, setActiveTab] = useState(1);
+  const [exam, setExam] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+
+    async function getExams(){
+      setLoading(true);
+      const res = await fetch(`https://aimforteaching-backend.onrender.com/api/exams/${id}`, {cache:"no-cache"});
+      const examData = await res.json();
+      setExam(examData.data);
+      setLoading(false);
+    }
+
+    getExams();
+
+  }, [])
 
   const tabs = [
     "Notification 2023",
@@ -29,7 +46,7 @@ const Exam = () => {
   const breadcrumbLinks = [
     { label: "Home", path: "/" },
     { label: "Exams", path: "/exams" },
-    { label: exam, path: exam },
+    { label: loading ? "fetching_exam" : `${exam?.attributes?.exam_name.toUpperCase()}`, path: `exams/${id}` },
   ];
 
   const variants = {
@@ -46,7 +63,7 @@ const Exam = () => {
             <BreadcrumSection links={breadcrumbLinks} />
           </div>
           <h1 className="text-2xl font-bold border px-4">
-            {exam.toUpperCase()} Exam
+            {loading ? "Loading" : `${exam?.attributes?.exam_name.toUpperCase()} Exam`}
           </h1>
           <div className="border flex lg:flex-row md:flex-row sm:flex-col flex-col mt-6">
             <div className="border lg:w-1/5 md:w-2/5 sm:w-full w-full p-3 gap-6 grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-2 grid-cols-2 gap-y-3 flex-col">
@@ -75,9 +92,8 @@ const Exam = () => {
                 transition={{ duration: 0.3 }}
                 className="border px-4 py-3 rounded-md shadow-md h-full"
               >
-                {activeTab === 1 && <div className="border"><Notification examName={exam}/></div>}
-                {activeTab === 2 && <div className="border"><Subjects examName={exam}/></div>}
-                {activeTab === 3 && <div className="border">hello world</div>}
+                {activeTab === 1 && <div className="border"><Notification examDetails={exam}/></div>}
+                {activeTab === 2 && <div className="border"><Subjects examDetails={exam}/></div>}
               </motion.div>
             </div>
           </div>

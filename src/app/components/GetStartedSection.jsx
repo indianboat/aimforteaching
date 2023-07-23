@@ -95,7 +95,7 @@ const GetStartedSection = () => {
           height={180}
           alt="home_image"
           priority
-          className="drop-shadow-md select-none"
+          className="select-none"
         />
       </motion.div>
     </>

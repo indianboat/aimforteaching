@@ -11,14 +11,14 @@ import { useEffect } from "react";
 
 const ExamUpdatesSection = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ 
+  const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold:0.2
+    threshold: 0.2,
   });
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -100,29 +100,30 @@ const ExamUpdatesSection = () => {
   return (
     <>
       <div ref={ref} className="border w-full">
-        <motion.h1 
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { x: "0%"},
-          hidden: { x: "-300%" },
-        }}
-        transition={{ type:"spring", duration: 1, bounce:0.3}}
-        className="lg:text-4xl inline-flex md:text-3xl sm:text-2xl text-2xl border lg:text-left md:text-left sm:text-center text-center font-extrabold text-orange-700 dark:text-white">
+        <motion.h1
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: { x: "0%" },
+            hidden: { x: "-300%" },
+          }}
+          transition={{ type: "spring", duration: 1, bounce: 0.3 }}
+          className="lg:text-4xl inline-flex md:text-3xl sm:text-2xl text-2xl border lg:text-left md:text-left sm:text-center text-center font-extrabold text-orange-700 dark:text-white"
+        >
           Everything your needs about exam updates
         </motion.h1>
-        <div  className="mt-12 border grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-8 sm:gap-7 gap-6">
+        <div className="mt-12 border grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-8 sm:gap-7 gap-6">
           {cards?.map((card) => {
             return (
               <motion.div
-              ref={ref}
+                ref={ref}
                 initial="hidden"
                 animate={controls}
                 variants={{
                   visible: { opacity: 1, y: 0 },
                   hidden: { opacity: 0, y: 50 },
                 }}
-                transition={{ duration: 0.6, delay:card.delay}}
+                transition={{ duration: 0.6, delay: card.delay }}
                 className="border p-8 rounded-3xl bg-white/75 dark:bg-neutral-900 shadow-md hover:shadow-xl"
                 key={card.index}
               >

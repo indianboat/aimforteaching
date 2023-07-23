@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Skeleton from "./Skeleton";
+
 
 const variants = {
   hidden: { opacity: 0, y: -10 },
@@ -12,16 +12,17 @@ const variants = {
 };
 
 const TabContent = ({ activeTab }) => {
+
   const [allTetExamList, setAllTetExamList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const response = await fetch("https://aimforteaching-backend.onrender.com/api/all-state-tets");
+      const response = await fetch("https://aimforteaching-backend.onrender.com/api/exams");
       const data = await response.json();
-      setLoading(false);
       setAllTetExamList(data.data);
+      setLoading(false);
     }
     fetchData();
   }, []);
@@ -39,16 +40,9 @@ const TabContent = ({ activeTab }) => {
     >
       {activeTab === 1 &&
         (loading ? (
-          <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 gap-4">
-            <Skeleton/>
-            <Skeleton/>
-            <Skeleton/>
-            <Skeleton/>
-            <Skeleton/>
-            <Skeleton/>
-          </div>
-        ) : allTetExamList.length < 0 ? (
-          <Skeleton />
+          <div className="p-2">Loading...</div>
+        ) : allTetExamList.length <= 0 ? (
+          <div className="p-2">Exam Not Found...</div>
         ) : (
           <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
             {allTetExamList.map((exam) => {
@@ -56,9 +50,7 @@ const TabContent = ({ activeTab }) => {
                 <Link
                   key={exam?.attributes?.exam_name}
                   className="border hover:bg-slate-100 dark:hover:bg-neutral-950 shadow hover:shadow-md flex flex-col px-4 py-3 h-full w-full rounded-lg text-center justify-center items-center"
-                  href={`exams/${exam?.attributes?.exam_name
-                    .replaceAll(" ", "")
-                    .toLowerCase()}`}
+                  href={`exams/${exam.id}`}
                 >
                   <p className="text-md font-semibold">
                     {exam?.attributes?.exam_name}

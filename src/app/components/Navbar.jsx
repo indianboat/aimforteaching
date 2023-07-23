@@ -259,11 +259,11 @@ const Navbar = () => {
                 className="flex w-full"
               >
                 <Link
-                  href={"/"}
+                  href={"/dailyquizzes"}
                   className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
                   onClick={handleLinkClick}
                 >
-                  Notes/Daily Quizzes
+                  Daily Quizzes
                 </Link>
               </motion.div>
 
@@ -312,6 +312,19 @@ const Navbar = () => {
               <motion.div
                 variants={item}
                 transition={{ delay: 1 }}
+                className="flex w-full"
+              >
+                <Link
+                  href={"/"}
+                  className="border px-4 py-1 hover:bg-slate-200 transition-colors hover:dark:bg-slate-700 rounded-lg w-full"
+                  onClick={handleLinkClick}
+                >
+                  Notes or Tricks
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={item}
+                transition={{ delay: 1.1 }}
                 className="flex w-full"
               >
                 <Link

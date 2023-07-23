@@ -13,13 +13,9 @@ body{
   flex-direction: column;
 }
 
-.footer{
+.footer-box{
   margin-top: auto;
 }
-
-.border{
-  border: 0;
-} 
 
 [class='dark'] body {
   background-color: #111314;
@@ -28,3 +24,7 @@ body{
 .swiper-slide{
   width: fit-content !important;
 }
+
+.border{
+  border: 0;
+} 

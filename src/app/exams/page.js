@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const tabs = ["All State TET", "Central Exams", "B.Ed Entrance"];
 
 const ExploreExams = () => {
+  
   const [activeTab, setActiveTab] = useState(1);
 
   const breadcrumbLinks = [
