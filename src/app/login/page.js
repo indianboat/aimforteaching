@@ -14,14 +14,14 @@ const Signin = () => {
   if(showPassword){
     setTimeout(() => {
       setShowPassword(false)
-    }, 3000);
+    }, 5000);
   }
 
   return (
     <>
       <div className="container flex flex-col md:w-11/12 sm:w-full w-full mx-auto my-6 border p-4">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-cols-1 justify-between gap-y-8">
-          <div className="border md:rounded-tl-[50px] py-16 xl:px-28 lg:px-16 md:px-14 sm:px-8 px-2 bg-slate-50 dark:bg-neutral-900">
+          <div className="border md:rounded-tl-[50px] xl:py-16 lg:py-16 md:py-14 sm:py-12 py-6 xl:px-28 lg:px-16 md:px-14 sm:px-8 px-3 bg-slate-50 dark:bg-neutral-900">
             <h1 className="font-semibold text-3xl drop-shadow">
               Welcome back
             </h1>
@@ -69,7 +69,7 @@ const Signin = () => {
                     required
                   />
                   <div className="flex rounded-e-md justify-center  items-center px-3 py-2 absolute">
-                    <button type="button" onClick={(e)=> setShowPassword(!showPassword)}>{
+                    <button type="button" onClick={()=> setShowPassword(!showPassword)}>{
                       showPassword ? <FaRegEye size={24} className="text-slate-400" /> : <FaRegEyeSlash size={24} className="text-slate-400" />
                     }</button>
                   </div>

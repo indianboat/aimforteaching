@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SiFacebook, SiTelegram, SiLinkedin } from "react-icons/si";
-import { RiInstagramFill } from "react-icons/ri";
+import { BsFacebook, BsInstagram, BsTelegram, BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -46,7 +45,7 @@ const Footer = () => {
                   <ul className="flex flex-col gap-y-2 mt-3 md:items-end sm:items-center items-center">
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Overview
@@ -54,7 +53,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Features
@@ -62,7 +61,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Tutorials
@@ -70,14 +69,14 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Pricing
                       </Link>
                     </li>
                     <li>
-                      <Link className="hover:text-blue-800" href="/">
+                      <Link className="hover:text-blue-800 dark:hover:text-orange-600" href="/">
                         Releases
                       </Link>
                     </li>
@@ -89,13 +88,13 @@ const Footer = () => {
                   </h1>
                   <ul className="flex flex-col gap-y-2 mt-3 md:items-end sm:items-center items-center">
                     <li>
-                      <Link className="hover:text-blue-800" href="/aboutus">
+                      <Link className="hover:text-blue-800 dark:hover:text-orange-600" href="/aboutus">
                         About
                       </Link>
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Press
@@ -103,7 +102,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Careers
@@ -111,7 +110,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Contact
@@ -119,7 +118,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Partners
@@ -134,7 +133,7 @@ const Footer = () => {
                   <ul className="flex flex-col gap-y-2 mt-3 md:items-end sm:items-center items-center">
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Help Center
@@ -142,7 +141,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Terms of Service
@@ -150,7 +149,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Legal
@@ -158,7 +157,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Privacy Policy
@@ -166,7 +165,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Status
@@ -181,7 +180,7 @@ const Footer = () => {
                   <ul className="flex flex-col gap-y-2 mt-3 md:items-end sm:items-center items-center">
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Facebook
@@ -189,7 +188,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Instagram
@@ -197,7 +196,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         LinkedIn
@@ -205,7 +204,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Twitter
@@ -213,7 +212,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        className="hover:text-blue-800 transition-colors"
+                        className="hover:text-blue-800 dark:hover:text-orange-600 transition-colors"
                         href="/"
                       >
                         Telegram
@@ -235,31 +234,35 @@ const Footer = () => {
             <div className="flex gap-x-4 justify-center items-center">
               <Link
                 className="flex border text-[#3b5998]"
-                href="/"
+                href="https://goo.gl/GK5nHo"
                 aria-label="facebooklink"
+                target="_blank"
               >
-                <SiFacebook size={22} />
+                <BsFacebook size={22} />
               </Link>
               <Link
-                className="flex border text-[#3b5998]"
-                href="/"
+                className="flex border text-[#0088cc]"
+                href="https://t.me/joinchat/KUKpShcwvYuTUZ8uBIhkVQ"
                 aria-label="telegramlink"
+                target="_blank"
               >
-                <SiTelegram size={22} />
+                <BsTelegram size={22} />
               </Link>
               <Link
-                className="flex border text-[#00405d]"
-                href="/"
+                className="flex border text-[#E1306C]"
+                href="https://www.instagram.com/invites/contact/?i=1v5pbl1xz8lj1&utm_content=2gkx6og"
                 aria-label="instagramlink"
+                target="_blank"
               >
-                <RiInstagramFill size={22} />
+                <BsInstagram size={22} />
               </Link>
               <Link
-                className="flex border text-[#0a66c2]"
-                href="/"
-                aria-label="linkedinlink"
+                className="flex border text-[#ff0000]"
+                href="https://youtube.com/@AimforTeaching"
+                aria-label="youtubelink"
+                target="_blank"
               >
-                <SiLinkedin size={22} />
+                <BsYoutube size={22} />
               </Link>
             </div>
           </div>
