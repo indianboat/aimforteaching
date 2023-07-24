@@ -7,7 +7,7 @@ const Notification = ({ examDetails }) => {
 
   const [loading, setLoading] = useState(false);
 
-  // if()
+  // if() --- editing here
 
   console.log(examDetails.attributes);
 
