@@ -16,6 +16,12 @@ const poppins = Poppins({
 export const metadata = {
   title: "AimForTeaching",
   description: "Government teaching exams preparation",
+  icons:{
+    icon:["/favicon/favicon.ico?v=4"],
+    apple:["/favicon/apple-touch-icon.png?v=4"],
+    shortcut:["/favicon/apple-touch-icon.png"]
+  }
+  
 };
 
 export default function RootLayout({ children }) {
