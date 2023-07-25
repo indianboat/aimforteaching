@@ -60,7 +60,7 @@ const VideoSection = () => {
               type="button"
               className="absolute border p-2 rounded-full bg-white"
             >
-              <Link href={"https://youtu.be/_q4lRD2-E_g"} target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
+              <Link href={"https://youtu.be/_q4lRD2-E_g"} aria-label="youtube-lastest-video1" target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
             </motion.div>
           </motion.div>
           <motion.div
@@ -86,7 +86,7 @@ const VideoSection = () => {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               className="absolute border p-2 rounded-full bg-white"
             >
-              <Link href={"https://youtu.be/oV1y6lVjE_4"} target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
+              <Link href={"https://youtu.be/oV1y6lVjE_4"} aria-label="youtube-lastest-video2" target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
             </motion.div>
           </motion.div>
           <motion.div
@@ -96,7 +96,7 @@ const VideoSection = () => {
               visible: { opacity: 1, y: 0 },
               hidden: { opacity: 0, y: 50 },
             }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="rounded-2xl relative border flex w-full h-full overflow-hidden place-items-center place-content-center"
           >
             <Image
@@ -112,7 +112,7 @@ const VideoSection = () => {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               className="absolute border p-2 rounded-full bg-white"
             >
-              <Link href={"https://youtu.be/vkNS-5opsq8"} target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
+              <Link href={"https://youtu.be/vkNS-5opsq8"} aria-label="youtube-lastest-video3" target="_blank"><BsYoutube color="#ff0000" size={32} /></Link>
             </motion.div>
           </motion.div>
         </div>
