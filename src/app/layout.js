@@ -21,13 +21,13 @@ export const metadata = {
     apple:["/favicon/apple-touch-icon.png?v=4"],
     shortcut:["/favicon/apple-touch-icon.png"]
   },
-  manifest: '/site.webmanifest',
-  
+  manifest: '/favicon/site.webmanifest',  
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta name="theme-color" content="#111314" />
       <body className={`${poppins.className}`}>
         <NextTopLoader
           showSpinner={false}
