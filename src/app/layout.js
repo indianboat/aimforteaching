@@ -20,7 +20,8 @@ export const metadata = {
     icon:["/favicon/favicon.ico?v=4"],
     apple:["/favicon/apple-touch-icon.png?v=4"],
     shortcut:["/favicon/apple-touch-icon.png"]
-  }
+  },
+  manifest: '/site.webmanifest',
   
 };
 
