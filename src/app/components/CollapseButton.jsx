@@ -12,10 +12,6 @@ const CollapseButton = (props) => {
     setIsOpen(!isOpen);
   };
 
-  // const handleToggleCollapse = () =>{
-  //   setIsOpen(false);
-  // }
-
   const examTypes = [
     {
       index: 0,

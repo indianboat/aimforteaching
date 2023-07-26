@@ -56,8 +56,6 @@ const Navbar = () => {
     }
   };
 
-
-
   return (
     <>
       <nav className="fixed w-full border py-3 z-50 top-0 backdrop-saturate-[80%] backdrop-blur-sm bg-white/70 dark:bg-[#121212]/70 shadow">

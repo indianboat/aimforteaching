@@ -46,7 +46,7 @@ const Exam = () => {
   const breadcrumbLinks = [
     { label: "Home", path: "/" },
     { label: "Exams", path: "/exams" },
-    { label: loading ? "fetching_exam" : `${exam?.attributes?.exam_name.toUpperCase()}`, path: `exams/${id}` },
+    { label: loading ? "fetching_exam" : `${exam?.attributes?.exam_name.toUpperCase()}`, path: `/exams/${id}` },
   ];
 
   const variants = {

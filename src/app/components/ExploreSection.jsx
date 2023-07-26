@@ -18,117 +18,15 @@ const ExploreSection = () => {
     }
   }, [controls, inView]);
 
-  // const exams = [
-  //   {
-  //     examName: "CTET",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "UPTET",
-  //     examState: "Uttar Pradesh",
-  //   },
-  //   {
-  //     examName: "Bihar TET",
-  //     examState: "Bihar",
-  //   },
-  //   {
-  //     examName: "HTET",
-  //     examState: "Haryana",
-  //   },
-  //   {
-  //     examName: "REET",
-  //     examState: "Rajasthan",
-  //   },
-  //   {
-  //     examName: "TNTET",
-  //     examState: "Tamil Nadu",
-  //   },
-  //   {
-  //     examName: "HP TET",
-  //     examState: "Himachal Pradesh",
-  //   },
-  //   {
-  //     examName: "TS TET",
-  //     examState: "Telangana",
-  //   },
-  //   {
-  //     examName: "UTET",
-  //     examState: "Uttarakhand",
-  //   },
-  //   {
-  //     examName: "PSTET",
-  //     examState: "Punjab",
-  //   },
-  //   {
-  //     examName: "SUPER TET",
-  //     examState: "Uttar Pradesh",
-  //   },
-  //   {
-  //     examName: "T TET",
-  //     examState: "Tripura",
-  //     logoUrl: "/logos/ctet.png",
-  //   },
-  //   {
-  //     examName: "CG TET",
-  //     examState: "Chhattisgarh",
-  //   },
-  //   {
-  //     examName: "MPTET",
-  //     examState: "Madhya Pradesh",
-  //   },
-  //   {
-  //     examName: "KARTET",
-  //     examState: "Karnataka",
-  //   },
-  //   {
-  //     examName: "OSSTET",
-  //     examState: "Odisha",
-  //   },
-  //   {
-  //     examName: "GTET",
-  //     examState: "Goa",
-  //   },
-  //   {
-  //     examName: "KVS",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "NVS",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "AWES",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "NDMC",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "SDMC",
-  //     examState: "Delhi",
-  //   },
-  //   {
-  //     examName: "EMRS",
-  //     examState: "India",
-  //   },
-  //   {
-  //     examName: "RPSC",
-  //     examState: "Rajasthan",
-  //   },
-  //   {
-  //     examName: "B.Ed Entrance",
-  //     examState: "Delhi",
-  //   },
-  // ];
-
   const [allExamList, setAllExamList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const response = await fetch("https://aimforteaching-backend.onrender.com/api/exams");
+      const response = await fetch(
+        "https://aimforteaching-backend.onrender.com/api/exams"
+      );
       const data = await response.json();
       setAllExamList(data.data);
       setLoading(false);
@@ -152,35 +50,38 @@ const ExploreSection = () => {
           Explore Exams
         </motion.h1>
         <div className="border grid lg:grid-cols-6 bg-none md:grid-cols-3 sm:grid-cols-3 grid-cols-2 lg:gap-6 md:gap-5 sm:gap-4 gap-3">
-          {allExamList.map((exam, index) => {
-            return (
-              <Link
-                href={`exams/${exam.id}`}
-                key={index}
-              >
-                <motion.div
-                  initial="hidden"
-                  animate={controls}
-                  variants={{
-                    visible: { opacity: 1, y: 0 },
-                    hidden: { opacity: 0, y: 50 },
-                  }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="border-2 flex flex-col items-center px-2 py-4 gap-x-4 gap-y-1 shadow rounded-xl  hover:shadow-lg hover:border-rose-700 dark:hover:bg-neutral-950 hover:text-rose-700"
-                >
-                  <h1 className="border text-lg text-center font-extrabold">
-                    {exam?.attributes?.exam_name}
-                  </h1>
-                  <p
-                    title={exam?.attributes?.exam_state}
-                    className="text-gray-500 lg:w-[100px] md:w-fit w-fit truncate ... text-sm text-center dark:text-white border"
-                  >
-                    {exam?.attributes?.exam_state}
-                  </p>
-                </motion.div>
-              </Link>
-            );
-          })}
+          {loading ? (
+            "Loading..."
+          ) : (
+            <>
+              {allExamList.map((exam, index) => {
+                return (
+                  <Link href={`exams/${exam.id}`} key={index}>
+                    <motion.div
+                      initial="hidden"
+                      animate={controls}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: 50 },
+                      }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="border-2 flex flex-col items-center px-2 py-4 gap-x-4 gap-y-1 shadow rounded-xl  hover:shadow-lg hover:border-rose-700 dark:hover:bg-neutral-950 hover:text-rose-700"
+                    >
+                      <h1 className="border text-lg text-center font-extrabold">
+                        {exam?.attributes?.exam_name}
+                      </h1>
+                      <p
+                        title={exam?.attributes?.exam_state}
+                        className="text-gray-500 lg:w-[100px] md:w-fit w-fit truncate ... text-sm text-center dark:text-white border"
+                      >
+                        {exam?.attributes?.exam_state}
+                      </p>
+                    </motion.div>
+                  </Link>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     </>
