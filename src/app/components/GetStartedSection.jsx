@@ -72,9 +72,9 @@ const GetStartedSection = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            className="border px-5 py-2 rounded-full bg-[#F4164C] dark:bg-orange-800 dark:shadow-orange-900 shadow-sm hover:shadow-md shadow-[#ff7799] text-white"
+            className="text-white border py-2 rounded-full bg-[#F4164C] dark:bg-orange-800 dark:shadow-orange-900 shadow-sm hover:shadow-md shadow-[#ff7799]"
           >
-            <Link href="/signup">Get Started</Link>
+            <Link href="/signup" className="border px-5 py-2 rounded-full text-white">Get Started</Link>
           </motion.button>
         </motion.div>
       </div>
